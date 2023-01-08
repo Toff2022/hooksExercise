@@ -13,17 +13,20 @@ const ChildrenExercise = () => {
                 <code>React.Children.map</code> так и{" "}
                 <code>React.Children.toArray</code>
             </p>
-
-            <Component />
-            <Component />
-            <Component />
+            <Divider />
+            <SmallTitle> Решение</SmallTitle>
+            <ComponentsList>
+                <Component />
+                <Component />
+                <Component />
+            </ComponentsList>
         </CollapseWrapper>
     );
 };
 
 const ComponentsList = ({ children }) => {
     const arrayOfChildren = React.Children.toArray(children);
-    console.log(arrayOfChildren);
+    console.log("arrayOfChildren", arrayOfChildren);
     return React.Children.map(arrayOfChildren, (child) =>
         React.cloneElement(child, {
             ...child.props,
@@ -38,7 +41,7 @@ ComponentsList.propTypes = {
     ])
 };
 const Component = ({ num }) => {
-    console.log(num);
+    console.log("num", num);
     return <div>{num} Компонент списка</div>;
 };
 Component.propTypes = {
