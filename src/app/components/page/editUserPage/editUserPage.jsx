@@ -27,7 +27,8 @@ const EditUserPage = () => {
                 profession: getProfessionById(profession)
             })
             .then((data) => history.push(`/users/${data._id}`));
-        console.log(data);
+        // console.log("handleSubmitData", data);
+        // console.log("handleSubmitProf", profession);
     };
     useEffect(() => {
         setIsLoading(true);
@@ -71,6 +72,7 @@ const EditUserPage = () => {
                             <TextField
                                 label="Имя"
                                 name="name"
+                                autoFocus
                             />
                             <TextField
                                 label="Электронная почта"
